@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Style the top navigation bar */
+.nav {
+  grid-area: nav;
+  overflow: hidden;
+  background-color: rgb(50, 148, 37);
+}
+/* Style the topnav links */
+.nav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: #000000;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'nav nav nav nav nav nav'
+      'header header header header header header' 
+      'left left left left left left' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+} 
+
+.left,
+.right {
+  padding: 10px;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Style the left column */
+.left {
+  grid-area: left;
+}
+
+
+
+/* Style the right column */
+.right {
+  grid-area: right;
+  background-color: rgb(50, 148, 37);
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: rgb(50, 148, 37);
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+       'nav nav nav nav nav nav'
+      'header header header header header header' 
+      'left left left left left left' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
+  }
+}
+</style>
+</head>
+<body>
+
+
+<div class="grid-container">
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Uniforms</a>
+        <a href="#">History</a>
+      </div>
+  <div class="header">
+    <h2><img src="Images/Celtics-logo.png" height=200" width=200"></h2>
+  </div>
+  
+  <div class="left" style="background-color:#aaa;"><img src="Images/TeamPhoto.jpg" width="300"></div>
+    
+  <div class="right" style="background-color:#ccc;">Column</div>
+  
+  <div class="footer">
+  <p>S. O'brien Walpole High School Web Design</p>
+  </div>
+</div>
+
+</body>
+</html>
